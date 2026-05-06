@@ -1,8 +1,8 @@
-# [Your Project Title Here]
+# Applied Machine Learning: IBD1000
 
 ## Repository Link
 
-[https://github.com/your_username/your_project_name]
+[https://github.com/irisyyl/coursework_appliedML_IBD1000/tree/main#]
 
 ## Description
 
