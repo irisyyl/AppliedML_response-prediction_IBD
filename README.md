@@ -2,7 +2,7 @@
 
 ## Repository Link
 
-[https://github.com/irisyyl/coursework_appliedML_IBD1000/tree/main#]
+[https://github.com/irisyyl/AppliedML_1000IBD]
 
 ## Description
 
