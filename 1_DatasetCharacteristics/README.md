@@ -5,22 +5,29 @@
 ## Dataset Information
 
 ### Dataset Source
-- **Dataset Link:** [https://www.springermedizin.de/the-1000ibd-project-multi-omics-data-of-1000-inflammatory-bowel-/16385080]
+- **Dataset Link:** [IBDMBD](https://ibdmdb.org/) 
 - **Dataset Owner/Contact:** Open Access
 
 ### Dataset Characteristics
-- **Number of Observations:** [Total number of samples/records in your dataset. For time series data, also specify the temporal resolution (e.g., daily, hourly, etc.)]
-- **Number of Features:** [Total number of features in your dataset]
+- **Number of Observations:** Total number of samples: 5533
+- **Number of Features:** Total number of features: 490 
 
 ### Target Variable/Label
-- **Label Name:** [Name of the target variable/column]
-- **Label Type:** [Classification/Regression/Clustering/Other]
-- **Label Description:** [What does this label represent? What is the prediction task?]
+- **Label Name:** 'diagnosis'
+- **Label Type:** Classification
+- **Label Description:** Predict 'diagnosis' based on clinical features. 
 - **Label Values:** [For classification: list of classes and their meanings. For regression: range of values. For other tasks: describe the label structure]
 - **Label Distribution:** [Brief description of class balance for classification or value distribution for regression]
 
 ### Feature Description
 [Provide a brief description of each feature or group of features in your dataset. If you have many features, group them logically and describe each group. Include information about data types, ranges, and what each feature represents.]
+
+A range of features are used to predict the label. Features include: 
+
+> - medication: 
+ 'Lomotil', 'Dipentum (olsalazine)', 'Rowasa enemas (mesalamine enemas)', 'Canasa suppositories (mesalamine suppositories)', 'Flagyl (Metronidazole)', 'Cipro (Ciprofloxin)', 'Xifaxin (rifaxamin)', 'Levaquin', 'Other Antibiotic:', 'Prednisone', 'Entocort (Budesonide)', 'Imodium',
+ 'Solumedrol (Medrol)','IV steroids','Cortenemas, Cortifoam, Proctofoam','Azathioprine (Imuran, Azasan)','Methotrexate','Mercaptopurine (Purinethol, 6MP)','VSL #3','FOS','Remicade (Infliximab)','Humira (Adalimumab)', 'DTO', 'Cimzia (Certlizumab)','Tysabri (Natalizumab)','Asacol (mesalamine)','Pentasa (mesalamine)','Lialda (mesalamine)','Apriso (mesalamine)','Colozal (balasalizide)','Sulfasalizine (Azulfidine)',
+
 
 **Example format:**
 - **Feature 1 (feature_name):** [Description of what this feature represents, data type, and any relevant details]
