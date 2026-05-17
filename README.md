@@ -1,16 +1,29 @@
-# Applied Machine Learning: IBD1000
+# Applied Machine Learning: Prediction of therapeutic response using omics data in IBD 
 
 ## Repository Link
 
-[https://github.com/irisyyl/AppliedML_1000IBD]
+[https://github.com/irisyyl/AppliedML_response-prediction_IBD]
 
 ## Description
 
-[Short project description here. Briefly summarize the problem you are trying to solve and the approach you're taking.]
+This project aims to explore multi-omics data in prediction of therapeutic response of IBD patients. 
+
+##### Approach 
+
+We start with exploring clinical metadata within different IBD subtypes, and see how clinical phenotype predicts therapeutic response. 
+
+Then, by adding one omics layer at a time, we compare and see the changes in relationships between features and prediction of response. 
+
+##### Project status: 
+
+> [] Using clinical phenotypes to predict therapy response. 
+
+
 
 ### Task Type
 
-[Image Classification / Chatbot / Regression / Clustering / Other]
+Classification: classify IBD subtypes using clinical data. 
+
 
 ### Results Summary
 
