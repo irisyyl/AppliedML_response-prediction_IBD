@@ -20,18 +20,16 @@
 - **Label Distribution:** [Brief description of class balance for classification or value distribution for regression]
 
 ### Feature Description
-[Provide a brief description of each feature or group of features in your dataset. If you have many features, group them logically and describe each group. Include information about data types, ranges, and what each feature represents.]
-
 A range of features are used to predict the label. Features include: 
 
-> - medication: 
- 'Lomotil', 'Dipentum (olsalazine)', 'Rowasa enemas (mesalamine enemas)', 'Canasa suppositories (mesalamine suppositories)', 'Flagyl (Metronidazole)', 'Cipro (Ciprofloxin)', 'Xifaxin (rifaxamin)', 'Levaquin', 'Other Antibiotic:', 'Prednisone', 'Entocort (Budesonide)', 'Imodium',
- 'Solumedrol (Medrol)','IV steroids','Cortenemas, Cortifoam, Proctofoam','Azathioprine (Imuran, Azasan)','Methotrexate','Mercaptopurine (Purinethol, 6MP)','VSL #3','FOS','Remicade (Infliximab)','Humira (Adalimumab)', 'DTO', 'Cimzia (Certlizumab)','Tysabri (Natalizumab)','Asacol (mesalamine)','Pentasa (mesalamine)','Lialda (mesalamine)','Apriso (mesalamine)','Colozal (balasalizide)','Sulfasalizine (Azulfidine)',
+- **Feature 1 (Medication):** 
+'Antibiotics', 'Chemotherapy', 'Immunosuppressants (e.g. oral corticosteroids)','Lomotil', 'Dipentum (olsalazine)', 'Rowasa enemas (mesalamine enemas)', 'Canasa suppositories (mesalamine suppositories)', 'Flagyl (Metronidazole)', 'Cipro (Ciprofloxin)', 'Xifaxin (rifaxamin)', 'Levaquin', 'Other Antibiotic:', 'Prednisone', 'Entocort (Budesonide)', 'Imodium', 'Solumedrol (Medrol)','IV steroids','Cortenemas, Cortifoam, Proctofoam','Azathioprine (Imuran, Azasan)','Methotrexate','Mercaptopurine (Purinethol, 6MP)','VSL #3','FOS','Remicade (Infliximab)','Humira (Adalimumab)', 'DTO', 'Cimzia (Certlizumab)','Tysabri (Natalizumab)','Asacol (mesalamine)','Pentasa (mesalamine)','Lialda (mesalamine)','Apriso (mesalamine)','Colozal (balasalizide)','Sulfasalizine (Azulfidine)'
+[Description of what this feature represents, data type, and any relevant details]
 
+- **Feature 2 (Montreal classification):** 
+'Age at diagnosis (A)', 'baseline_montreal_location', 'Location (L) prior to first surgery', 'Behavior (B)', 'Extent (E)'
+[Description of what this feature represents, data type, and any relevant details]
 
-**Example format:**
-- **Feature 1 (feature_name):** [Description of what this feature represents, data type, and any relevant details]
-- **Feature 2 (feature_name):** [Description of what this feature represents, data type, and any relevant details]
 - **Feature Group (group_name):** [Description of a group of related features]
 
 ## Exploratory Data Analysis
