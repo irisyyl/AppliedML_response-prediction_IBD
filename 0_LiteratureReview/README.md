@@ -43,6 +43,9 @@ Approaches or solutions that have been tried before on similar projects.
 
   - **[Link](https://www.nature.com/articles/s41586-019-1237-9)**
   - **Objective**: This ariticle used IBDMBD dataset to conduct multi-omics analysis and explored gut microbial ecosystem on IBD patients. 
-  - **Methods**: 
+  - **Methods**: They employed statistical  methods and association testing. 
+    - PERMANOVA for quantifications of variance and Mantel test for quantification of covariation between measurement types
+    - Differential microbiome feature abundance
+    
   - **Outcomes**: 
   - **Relation to the Project**: Publication of the working dataset. 
