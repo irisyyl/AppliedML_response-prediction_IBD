@@ -13,9 +13,9 @@ Approaches or solutions that have been tried before on similar projects.
       - Linear algorithms: 
         - Linear regression
         - Logistic regression
-        - Ridge regression
-        - LASSO regression 
-        - Elastic net
+        - Ridge regression (L2 regularization)
+        - LASSO regression (L1 regularization)
+        - Elastic net (L1 and L2 regularization)
       - Non-linear algorithms: 
         - Support vector machines (SVM)
         - K-nearest neighbors
@@ -24,11 +24,12 @@ Approaches or solutions that have been tried before on similar projects.
         - Neural networks
       
     - Upsupervised 
-      - Hierachical clustering
+      - Hierarchical clustering
       - Principal component analysis (PCA)
 
-  - **Outcomes**:
+  - **Outcomes**: The most frequently employed ML methods included penalized regression models, random forest, support vector machines, Bayesian approach and neural networks in recent years in using AI to explore omics data for IBD risk prediction and classification, with AUC ranging from 0.7 to 0.95.  
   - **Relation to the Project**: List out most commonly used classification and/or regression algorithms in IBD research. 
+
 
 
 - **Source 2**: *Comparative performances of machine learning methods for classifying Crohn Disease patients using genome-wide genotyping data*
@@ -37,15 +38,23 @@ Approaches or solutions that have been tried before on similar projects.
   - **Objective**: This article compared ML methods for CD classification using genomic data. 
   - **Methods**:In this paper, they compared three classes of models for case/control classification: logistic regression (LR), dense neural networks (NN) and gradient boosting on decision trees (GBT). 
   - **Outcomes**: Compared to LR, non-linear models such as GBT or NN may provide robust complementary approaches to identify and classify genetic markers.
-  - **Relation to the Project**: Compared performance of ML models and pointed out potential models to identify and classify genetic markers. 
+  - **Relation to the Project**: Compared performance of ML models and pinpointed potential models to identify and classify genetic markers. 
+
+
 
 - **Source 3**: *Multi-omics of the gut microbial ecosystem in inflammatory bowel diseases*
 
   - **[Link](https://www.nature.com/articles/s41586-019-1237-9)**
   - **Objective**: This ariticle used IBDMBD dataset to conduct multi-omics analysis and explored gut microbial ecosystem on IBD patients. 
-  - **Methods**: They employed statistical  methods and association testing. 
+  - **Methods**: They employed statistical methods and association testing: 
+
     - PERMANOVA for quantifications of variance and Mantel test for quantification of covariation between measurement types
+
     - Differential microbiome feature abundance
     
   - **Outcomes**: 
-  - **Relation to the Project**: Publication of the working dataset. 
+  - **Relation to the Project**: Original publication of the working dataset. 
+
+
+
+ML models to test in this project: Random forest, gradient boosted trees (GBT)
