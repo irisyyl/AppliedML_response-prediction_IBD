@@ -36,7 +36,7 @@ Approaches or solutions that have been tried before on similar projects.
 
   - **[Link](https://www.nature.com/articles/s41598-019-46649-z)**
   - **Objective**: This article compared ML methods for CD classification using genomic data. 
-  - **Methods**:In this paper, they compared three classes of models for case/control classification: logistic regression (LR), dense neural networks (NN) and gradient boosting on decision trees (GBT). 
+  - **Methods**: In this paper, they compared three classes of models for case/control classification: logistic regression (LR), dense neural networks (NN) and gradient boosting on decision trees (GBT). 
   - **Outcomes**: Compared to LR, non-linear models such as GBT or NN may provide robust complementary approaches to identify and classify genetic markers.
   - **Relation to the Project**: Compared performance of ML models and pinpointed potential models to identify and classify genetic markers. 
 
@@ -47,9 +47,11 @@ Approaches or solutions that have been tried before on similar projects.
   - **[Link](https://www.nature.com/articles/s41586-019-1237-9)**
   - **Objective**: This ariticle used IBDMBD dataset to conduct multi-omics analysis and explored gut microbial ecosystem on IBD patients. 
   - **Methods**: They employed statistical methods and association testing: 
-
-    - PERMANOVA for quantifications of variance and Mantel test for quantification of covariation between measurement types
-
+    Statistical methods: 
+    - Principal coordinates analysis (PCoA) 
+    - Wald test
+    - PERMANOVA for quantifications of variance and 
+    - Mantel test for quantification of covariation between measurement types
     - Differential microbiome feature abundance
     
   - **Outcomes**: 
