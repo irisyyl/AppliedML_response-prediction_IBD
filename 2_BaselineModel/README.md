@@ -5,51 +5,50 @@
 ## Baseline Model Results
 
 ### Model Selection
-- **Baseline Model Type:** Logistic Regression
-- **Rationale:** Standard model for classification
+- **Baseline Model Type:** Logistic regression (LR) and random forest (RF). 
+- **Rationale:** LR and RF were the standard baseline classifier. 
 
 ### Model Performance
-- **Evaluation Metric:** Accuracy, F1-score, Precision, Recall (weighted and macro averages)
-- **Performance Score:** Accuracy: 63%, F1-score (weighted): 0.64, F1-score (macro): 0.62
-- **Cross-Validation Score:** Not done yet 
-- WIP: 
-    Confusion matrix
-    Class 0 (UC): precision=0.49, recall=0.71, F1=0.58, support=301
-    Class 1 (CD): precision=0.78, recall=0.58, F1=0.67, support=537
-    Overall accuracy: 0.63
+- **Evaluation Metric:** Accuracy, macro F1-score, weighted F1-score, precision, recall, and confusion matrix.
+- **Performance Score:** 
+    * Logistic regression: test accuracy 0.943, macro F1 0.941
+    * Random forest: test accuracy 0.978, macro F1 0.977
+- **Cross-Validation Score:** 3-fold group cross-validation with RandomizedSearchCV.
 
 
 ### Evaluation Methodology
-- **Data Split:** 80% train / 20% test with stratified sampling (to maintain 64% CD / 36% UC ratio in both sets) 
-- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score (both macro and weighted averages), Confusion Matrix
+- **Data Split:** 80% train / 20% test with **subject-level splitting** using `sample_id` to avoid train-test leakage.
+- **Evaluation Metrics:** Accuracy, precision, recall, macro F1, weighted F1, confusion matrix, ROC curves, and precision-recall curves.
 
 Justification of these metrics for this problem: 
-1. Class imbalance exists (64% CD vs 36% UC) 
-2. F1-score: balances precision and recall, which is preferred for imbalanced classification
-3. Recall is clinically important — missing a CD diagnosis (false negative) has different consequences than misclassifying UC as CD (false positive)
-4. Confusion matrix shows which errors the model makes, which matters more than a single number
+1. Class imbalance exists (CD is the largest class, followed by UC and nonIBD.)
+2. Macro F1-score: it treats all classes equally and balances precision and recall, which is preferred for imbalanced classification. 
+3. Precision and recall: help describe how well the model distinguishes each diagnosis class, and they are clinically important — missing a CD diagnosis (false negative) has different consequences than misclassifying UC as CD (false positive)
+4. Confusion matrix shows which diagnoses are most often confused, which is important for medical interpretation.
+5. ROC and PR curves provide an additional view of classifier quality across thresholds.
 
 ### Metric Practical Relevance
-For IBD Subtype Classification (UC vs CD): 
-- Accuracy (63%) means overall proportion of correct predictions. 
-    Impact: Limited value — in this case, a model that always predicts CD would achieve 64% accuracy without learning anything. Accuracy alone is misleading for imbalanced data 
-- Precision for CD (0.78): When the model predicts CD, 78% of those predictions are correct	
-    Impact: High precision means fewer false positives — fewer UC patients incorrectly treated for CD (avoids unnecessary Crohn's-specific therapies) 
-- Recall for CD (0.58):	The model correctly identifies 58% of actual CD cases
-    Impact: Low recall is concerning — 42% of CD patients would be missed (false negatives), potentially delaying appropriate CD treatment 
-- Recall for UC (0.71):	The model correctly identifies 71% of actual UC cases. 
-    Impact: Better than CD recall, but still 29% of UC patients misclassified as CD 
-- F1-score (weighted: 0.64): Balanced measure accounting for both precision and recall. 
-    Impact: More informative than accuracy for imbalanced datasets — reflects the trade-off between false positives and false negatives 
-- Confusion Matrix shows exactly which patients are misclassified. 
-    Impact: Critical for clinical decision-making — reveals the model confuses 224 CD as UC and 86 UC as CD, which is substantial clinical error 
+For diagnosis classification (UC / CD / nonIBD)
+
+| Metric | Impact | 
+|---|---|
+| Accuracy (0.947 for LightGBM): Overall proportion of correct predictions. | High accuracy indicates strong overall classification performance, but it should still be interpreted alongside class-wise metrics.
+| Macro F1 (0.946 for LightGBM): Average F1 across all classes, treating each class equally. | Very useful when class sizes differ, because it shows that the model performs well on UC, CD, and nonIBD rather than being dominated by the largest class.
+| Precision for CD (0.96): When the model predicts CD, it is correct 96% of the time. | Few false positives for CD, which is important when subtype-specific interpretation matters.
+| Recall for CD (0.94): The model identifies 94% of true CD samples. | Low missed-case rate for CD.
+| Precision and recall for UC and nonIBD: Both are above 0.90. | The model generalizes well across all three classes.
+| Confusion matrix: Shows only a small number of misclassifications among classes. | Important for understanding whether the model confuses biologically similar groups, such as UC and CD. | 
+
 
 
 Real-World Implications: 
-- CD predicted as UC (false negative for CD): Patient may miss essential Crohn's-specific treatments (e.g., anti-TNF, biologics); risk of complications like strictures/fistulas worsens 
-- UC predicted as CD (false positive for CD): Patient may receive unnecessary Crohn's medications; may not get appropriate UC-specific therapy (e.g., colectomy considerations) 
-- Model accuracy of 63%: Not clinically acceptable for standalone diagnosis — human gastroenterologists achieve >90% diagnostic accuracy with clinical evaluation + imaging 
-- F1-score of 0.64:	Moderate performance — suggests the model has some signal but needs improvement (better features, more data, or omics integration) 
+* Strong microbiome signal: The MGX species-level data are highly informative for separating UC, CD, and nonIBD, suggesting that disease-associated dysbiosis is strong in this cohort.
+
+* Clinical relevance: High performance indicates that stool metagenomic profiles capture biologically meaningful subtype differences.
+
+* Why not use the earlier metadata-response endpoint: The original therapy-response framing was too ambiguous because the metadata contained diagnosis-related variables but did not provide a clean, unambiguous response label. Using those variables directly would have introduced label leakage and overly optimistic performance.
+
+* Practical interpretation: The MGX model is a much more valid prediction task than the metadata-based response model, because it predicts diagnosis from microbial features rather than reconstructing a label already embedded in the metadata.
 
 
 ## Next Steps
