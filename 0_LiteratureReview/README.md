@@ -30,8 +30,6 @@ Approaches or solutions that have been tried before on similar projects.
   - **Outcomes**: The most frequently employed ML methods included penalized regression models, random forest, support vector machines, Bayesian approach and neural networks in recent years in using AI to explore omics data for IBD risk prediction and classification, with AUC ranging from 0.7 to 0.95.  
   - **Relation to the Project**: List out most commonly used classification and/or regression algorithms in IBD research. 
 
-
-
 - **Source 2**: *Comparative performances of machine learning methods for classifying Crohn Disease patients using genome-wide genotyping data*
 
   - **[Link](https://www.nature.com/articles/s41598-019-46649-z)**
@@ -39,8 +37,6 @@ Approaches or solutions that have been tried before on similar projects.
   - **Methods**: In this paper, they compared three classes of models for case/control classification: logistic regression (LR), dense neural networks (NN) and gradient boosting on decision trees (GBT). 
   - **Outcomes**: Compared to LR, non-linear models such as GBT or NN may provide robust complementary approaches to identify and classify genetic markers.
   - **Relation to the Project**: Compared performance of ML models and pinpointed potential models to identify and classify genetic markers. 
-
-
 
 - **Source 3**: *Multi-omics of the gut microbial ecosystem in inflammatory bowel diseases*
 
@@ -56,6 +52,14 @@ Approaches or solutions that have been tried before on similar projects.
     
   - **Outcomes**: 
   - **Relation to the Project**: Original publication of the working dataset. 
+
+- **Source 4**: *Treat-to-Target in Ulcerative Colitis: How Soon Is Now?*
+
+  - **[Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12841710/#sec1-jcm-15-00759)**
+  - **Objective**: This ariticle explores current evidence and future directions on treat-to-target strategies in UC for clinical research and practice.
+  - **Methods**:    
+  - **Outcomes**: 
+  - **Relation to the Project**: Clinical endpoint for UC. 
 
 
 
