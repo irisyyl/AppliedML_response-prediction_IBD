@@ -50,16 +50,25 @@ Approaches or solutions that have been tried before on similar projects.
     - Mantel test for quantification of covariation between measurement types
     - Differential microbiome feature abundance
     
-  - **Outcomes**: 
-  - **Relation to the Project**: Original publication of the working dataset. 
+  - **Outcomes**: The study identified coordinated changes across the gut microbial ecosystem during IBD activity. These included increased facultative anaerobes, depletion of obligate anaerobes, disruption of microbial transcription, altered bile-acid and short-chain-fatty-acid profiles, and changes in host serum antibody levels. Disease activity was also associated with increased temporal variability across taxonomic, functional, and biochemical measurements. The study identified complementary signals across multiple omics layers and made the resulting data and infrastructure available through the IBDMDB
+
+  - **Relation to the Project**: Original publication of the working dataset. Although the original study performed broad multi-omics and longitudinal analyses, our project uses a narrower machine-learning task based on species-level MGX profiles and shall be viewed as a predictive extension of the resource rather than a reproduction of the original multi-omics analysis.
 
 - **Source 4**: *Treat-to-Target in Ulcerative Colitis: How Soon Is Now?*
 
   - **[Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12841710/#sec1-jcm-15-00759)**
   - **Objective**: This ariticle explores current evidence and future directions on treat-to-target strategies in UC for clinical research and practice.
-  - **Methods**:    
-  - **Outcomes**: 
-  - **Relation to the Project**: Clinical endpoint for UC. 
+  - **Methods**: A review and clinical perspective on T2T management in UC. It discusses evidence from randomized controlled trials, real-world studies, clinical guidelines, and ongoing research. The review covers different monitoring approaches, including clinical assessment, fecal calprotectin, C-reactive protein, endoscopy, histology, intestinal ultrasound, and patient-reported outcomes.
+  - **Outcomes**: This article describes several categories of treatment targets:
+    - **Short-term targets:** Symptomatic response and clinical remission, including improvement in rectal bleeding and stool frequency.
+    - **Intermediate targets:** Biochemical improvement, including normalization of C-reactive protein and reduction of fecal calprotectin.
+    - **Long-term targets:** Endoscopic healing, histological healing, steroid-free remission, improved quality of life, and prevention of hospitalization, surgery, relapse, and disease complications.
+    - **Composite targets:** Disease clearance, which combines symptomatic remission, endoscopic healing, and histological healing.
+    - **Emerging monitoring tools:** Intestinal ultrasound and other non-invasive methods for early assessment of treatment response
+
+  - **Relation to the Project**: It is relevant for defining a clinically meaningful endpoint for a future therapeutic-response prediction project. It shows that medication exposure alone—for example, whether a patient received infliximab or certolizumab—is not equivalent to treatment response. A response-prediction model should instead use a predefined outcome, such as clinical remission, reduction in fecal calprotectin, endoscopic healing, histological healing, or a composite disease-clearance endpoint at a specified follow-up time.
+
+    However, the current HMP2/IBDMDB metadata used in this project did not provide a sufficiently clear and consistently recorded therapeutic-response endpoint. Therefore, the project was redirected toward predicting UC, CD, and nonIBD from species-level MGX metagenomic profiles.
 
 
 
