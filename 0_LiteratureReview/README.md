@@ -44,11 +44,13 @@ Approaches or solutions that have been tried before on similar projects.
   - **Objective**: This ariticle used IBDMBD dataset to conduct multi-omics analysis and explored gut microbial ecosystem on IBD patients. 
   - **Methods**: They employed statistical methods and association testing: 
     Statistical methods: 
-    - Principal coordinates analysis (PCoA) 
-    - Wald test
-    - PERMANOVA for quantifications of variance and 
-    - Mantel test for quantification of covariation between measurement types
-    - Differential microbiome feature abundance
+    - Principal coordinates analysis (PCoA): visualize differences in sample composition.
+    - Wald test and differential-abundance analysis: identify features associated with disease or dysbiosis.
+    - PERMANOVA: quantify the proportion of variation explained by clinical and biological factors
+    - Mantel test: quantify covariation between different measurement types
+    - Integrative multi-omics analysis: identify relationships between microbial, biochemical, and host factors
+
+    Longitudinal analysis: investigate changes in microbial, biochemical, and host-associated features over time
     
   - **Outcomes**: The study identified coordinated changes across the gut microbial ecosystem during IBD activity. These included increased facultative anaerobes, depletion of obligate anaerobes, disruption of microbial transcription, altered bile-acid and short-chain-fatty-acid profiles, and changes in host serum antibody levels. Disease activity was also associated with increased temporal variability across taxonomic, functional, and biochemical measurements. The study identified complementary signals across multiple omics layers and made the resulting data and infrastructure available through the IBDMDB
 
