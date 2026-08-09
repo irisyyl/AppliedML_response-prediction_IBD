@@ -6,7 +6,9 @@
 
 ### Model Selection
 - **Baseline Model Type:** Logistic regression (LR) and random forest (RF). 
-- **Rationale:** LR and RF were the standard baseline classifier. 
+- **Rationale:** LR provides a simple reference model for a multiclass classification problem. It is easy to interpret the linear relationship between taxa and diagnosis, fast to train and easy to reproduce, a useful test of whether the classes are approximately linearly separable, and sets a transparent benchmark before using nonlinear models. 
+
+RF provides a nonlinear baseline. It captures nonlinear relationships, the interactions between taxa, works well with high-dimensional tabular data, and requires relatively little feautre transformation. It is more flexible than LR, but still relatively straightforward to implement and explain. 
 
 ### Model Performance
 - **Evaluation Metric:** Accuracy, macro F1-score, weighted F1-score, precision, recall, and confusion matrix.
@@ -32,9 +34,9 @@ For diagnosis classification (UC / CD / nonIBD)
 
 | Metric | Impact | 
 |---|---|
-| Accuracy (0.947 for LightGBM): Overall proportion of correct predictions. | High accuracy indicates strong overall classification performance, but it should still be interpreted alongside class-wise metrics.
-| Macro F1 (0.946 for LightGBM): Average F1 across all classes, treating each class equally. | Very useful when class sizes differ, because it shows that the model performs well on UC, CD, and nonIBD rather than being dominated by the largest class.
-| Precision for CD (0.96): When the model predicts CD, it is correct 96% of the time. | Few false positives for CD, which is important when subtype-specific interpretation matters.
+| Accuracy: Overall proportion of correct predictions. | High accuracy indicates strong overall classification performance, but it should still be interpreted alongside class-wise metrics.
+| Macro F1: Average F1 across all classes, treating each class equally. | Very useful when class sizes differ, because it shows that the model performs well on UC, CD, and nonIBD rather than being dominated by the largest class.
+| Precision for CD (0.95): When the model predicts CD, it is correct 95% of the time. | Few false positives for CD, which is important when subtype-specific interpretation matters.
 | Recall for CD (0.94): The model identifies 94% of true CD samples. | Low missed-case rate for CD.
 | Precision and recall for UC and nonIBD: Both are above 0.90. | The model generalizes well across all three classes.
 | Confusion matrix: Shows only a small number of misclassifications among classes. | Important for understanding whether the model confuses biologically similar groups, such as UC and CD. | 
@@ -46,7 +48,7 @@ Real-World Implications:
 
 * Clinical relevance: High performance indicates that stool metagenomic profiles capture biologically meaningful subtype differences.
 
-* Why not use the earlier metadata-response endpoint: The original therapy-response framing was too ambiguous because the metadata contained diagnosis-related variables but did not provide a clean, unambiguous response label. Using those variables directly would have introduced label leakage and overly optimistic performance.
+* Problem with metadata-response endpoint: The metadata contained diagnosis-related variables but did not provide a clean, unambiguous response label. Using those variables directly would have introduced label leakage and overly optimistic performance.
 
 * Practical interpretation: The MGX model is a much more valid prediction task than the metadata-based response model, because it predicts diagnosis from microbial features rather than reconstructing a label already embedded in the metadata.
 
